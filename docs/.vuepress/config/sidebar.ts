@@ -15,5 +15,12 @@ export const sidebar: SidebarConfig = [
             '/project/overview',
             '/project/plan'
         ]
+    },
+    {
+        text: '会议记录',
+        collapsible: true,
+        children: [
+            '/meeting/2022-03-26',
+        ]
     }
 ];
