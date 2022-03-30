@@ -14,7 +14,7 @@ export const sidebar: SidebarConfig = [
         children: [
             '/project/overview',
             '/project/plan',
-            '/project/ReqAnay/RA',
+            '/project/requirement-analysis',
         ]
     },
     {

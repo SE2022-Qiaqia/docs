@@ -18,7 +18,7 @@ export const navbar: NavbarConfig = [
             },
             {
                 text: '需求分析',
-                link: '/project/ReqAnay/RA'
+                link: '/project/requirement-analysis'
             }
         ]
     },
