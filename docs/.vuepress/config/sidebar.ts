@@ -13,7 +13,8 @@ export const sidebar: SidebarConfig = [
         collapsible: true,
         children: [
             '/project/overview',
-            '/project/plan'
+            '/project/plan',
+            '/project/ReqAnay/RA',
         ]
     },
     {
