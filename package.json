@@ -14,7 +14,6 @@
     "vuepress": "^2.0.0-beta.36"
   },
   "dependencies": {
-    "mermaid": "^8.14.0",
-    "nanoid": "^3.3.2"
+    "mermaid": "^8.14.0"
   }
 }
