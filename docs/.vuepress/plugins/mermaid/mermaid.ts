@@ -13,7 +13,7 @@ export default defineComponent({
   },
   setup(props) {
     // 保留容器的虚拟节点
-    const vnode = h('div', { class: 'mermaid-svg-wrapper' });
+    const vnode = h('div', { class: 'mermaid-svg-wrapper' }, props.code);
 
     const initializeMermaid = (isDark: boolean) => {
       Mermaid.mermaidAPI.initialize({
@@ -29,6 +29,7 @@ export default defineComponent({
     // 3. 对新的mermaid渲染
     const render = async (isDark: boolean = null) => {
       if (isDark === null) isDark = isDarkTheme();
+      console.log('rendered!');
       initializeMermaid(isDark);
       const node = vnode.el as HTMLDivElement;
       let mermaidHost = document.createElement('div');
@@ -38,15 +39,16 @@ export default defineComponent({
       Mermaid.init(mermaidHost);
     };
 
-    onMounted(render);
-
-    watchThemeChange(isDark => {
-      render(isDark);
+    onMounted(() => {
+      render(isDarkTheme());
+      watchThemeChange(isDark => {
+        render(isDark);
+      });
     });
 
     // dev develop
     // @ts-ignore
-    if (__VUEPRESS_DEV__) onUpdated(render)
+    if (__VUEPRESS_DEV__) onUpdated(render);
 
     return () => h('div', { class: 'mermaid-wrapper' }, [vnode]);
   }
