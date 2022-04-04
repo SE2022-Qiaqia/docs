@@ -121,6 +121,7 @@
 - 存储用户信息、课程信息、学期信息、学院信息等等。
 - 根据用户角色的不同，可以完成选课、撤课、开课、强制选撤课、查看课程信息等功能。
 - 可以完成复杂的课程查询，比如按学院查询、按教师查询，多个条件组合查询等。
+- 学生可以查询自己已选课表、课程成绩等。
 
 ```mermaid
 graph LR
@@ -132,10 +133,17 @@ graph LR
   User --> 修改密码
   User --> 查询个人信息
   
+  UserManagement[用户管理模块--管理员]
+  System --> UserManagement
+  UserManagement --> 添加用户
+  UserManagement --> 删除用户
+  UserManagement --> 查询用户
+  UserManagement --> 修改用户信息
+
   Authentic[认证/授权模块]
   System --> Authentic
   Authentic --> 登录
-  Authentic --> 授权
+  Authentic --> 校验角色
 
   Course[课程模块]
   System --> Course
@@ -148,8 +156,15 @@ graph LR
 
     Course --> 选课
     Course --> 撤课
-    Course --> 强制选课
-    Course --> 强制撤课
+    Course --教师--> 查询选课学生
+    Course --高权限--> 强制选课
+    Course --高权限--> 强制撤课
+  
+  Schedule[课表模块--学生]
+  System --> Schedule
+  Schedule --> 查看课表
+  Schedule --> 查询成绩
+  Schedule --> 查询总评
 ```
 
 ### 功能需求
