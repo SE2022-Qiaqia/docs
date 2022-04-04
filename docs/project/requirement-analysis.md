@@ -132,10 +132,10 @@ graph LR
   User --> 修改密码
   User --> 查询个人信息
   
-  Authentica[认证/授权模块]
-  System --> Authentica
-  Authentica --> 登录
-  Authentica --> 授权
+  Authentic[认证/授权模块]
+  System --> Authentic
+  Authentic --> 登录
+  Authentic --> 授权
 
   Course[课程模块]
   System --> Course
@@ -154,4 +154,4 @@ graph LR
 
 ### 功能需求
 
-TODO：用例图、子用例图、用例描述（XYX/LZL）
+TODO：用例图、子用例图、用例描述（XYX/LZL）$$
