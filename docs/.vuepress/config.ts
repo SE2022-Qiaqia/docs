@@ -13,6 +13,11 @@ export default defineUserConfig<DefaultThemeOptions>({
     // 这里需要手动加上base，暂时没找到有没有比较好的做法
     ['link', { rel: 'icon', href: `${base}images/hero.jpg` }],
   ],
+  markdown: {
+    toc: {
+      level: [2, 3, 4]
+    },
+  },
   plugins: [
     [
       '@vuepress/plugin-search',
