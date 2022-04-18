@@ -16,6 +16,7 @@ export const sidebar: SidebarConfig = {
         '/project/overview',
         '/project/plan',
         '/project/requirement-analysis',
+        '/project/design-analysis'
       ]
     },
     {
