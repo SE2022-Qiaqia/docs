@@ -24,6 +24,7 @@ export const sidebar: SidebarConfig = {
       children: [
         '/meeting/2022-03-26',
         '/meeting/2022-04-02',
+        '/meeting/2022-04-18',
       ]
     }
   ],
