@@ -18,9 +18,9 @@
 
 ### 开发环境
 ### 软件环境
-|表项|选型|版本|说明|
-|-|-|-|-|
-| 操作系统   | Ubuntu(Linux) | 20.04LTS | 您也可选Windows 10。                                                         |
+| 表项       | 选型          | 版本     | 说明                                                                                        |
+| ---------- | ------------- | -------- | ------------------------------------------------------------------------------------------- |
+| 操作系统   | Ubuntu(Linux) | 20.04LTS | 您也可选Windows 10。                                                                        |
 | 数据库平台 | PostgreSQL    | 14.2     | 为后端服务提供关系型数据库支持。                                                            |
 | 应用平台   | Java          | JDK11    | 后端服务采用Java语言编写，并采用JDK11作为开发套件，所以可能需要最低版本为11的Java运行环境。 |
 | Web容器    | Nginx         | 1.21.6   | 作为承载Web静态资源的容器，同时支持反向代理将API调用代理到后端服务上。                      |
@@ -46,8 +46,8 @@
 系统总体上采用三层MVC架构，其中水平层次上自上而下分为前端界面view层、Controller控制层、Service业务逻辑兼model层，底层为用于数据库访问的Dao。垂直层次主要依据面向用户权限划分为四个切面:StudentController为代表的学生服务切面、TeacherController为代表的教师服务切面、AdminController为代表的管理员服务切面，CommonController为代表的公用服务切面。对应个个Controller于Service层划分了如下公用构件StudentService(用于学生特有业务处理构件)、CourseSelectService(单独将选课相关业务抽离出来有利于优化和非功能性需求的满足)、CourseService(用于课程特有业务处理构件，间接控制关系较为密切的CourseSelectService)、UserService(用于用户管理特有业务处理构件)、TeacherService(用于教师特有业务处理构件)，CommonService(用于公用业务业务处理构件)
 ![classDiagram]()
 
-|class|描述|
-|-----|----|
+| class | 描述 |
+| ----- | ---- |
 
 ### 功能与流程逻辑(LZL根据前端大概描述下)
 
@@ -224,3 +224,61 @@
     3. 类型: String
 
 ### 储存分配
+
+### 1.采用的数据库
+
+采用的数据库：MySql。
+
+对应的版本号：8.0.28。
+### 2.数据库表的设计
+##### user（用户表）
+
+|      名      |  类型   | 长度  | 是否可空 | 主键  | 默认值 | 备注  |
+| :----------: | :-----: | :---: | :------: | :---: | :----: | :---: |
+|   user_id    | bigint  |       |    ×     |   √   |        | 自增  |
+|     name     | varchar |  32   |    ×     |       |        |       |
+|     role     | tinyint |       |    ×     |       |        |       |
+|  roll_date   |  date   |       |    ×     |       |        |       |
+|   password   | varchar |  255  |    ×     |       |        |       |
+| institute_id |   int   |       |    ×     |       |        | 外键  |
+
+##### course（课程表）
+
+|      名      |  类型   | 长度  | 是否可空 | 主键  | 默认值 | 备注  |
+| :----------: | :-----: | :---: | :------: | :---: | :----: | :---: |
+|  course_id   | bigint  |       |    ×     |   √   |        | 自增  |
+| course_name  | varchar |  255  |    ×     |       |        |       |
+| course_hour  |   int   |       |    ×     |       |        |       |
+|    credit    |  float  |       |    ×     |       |        |       |
+| institute_id |   int   |       |    ×     |       |        | 外键  |
+
+##### institute（院系表）
+
+|       名       |  类型   | 长度  | 是否可空 | 主键  | 默认值 | 备注  |
+| :------------: | :-----: | :---: | :------: | :---: | :----: | :---: |
+|  institute_id  |   int   |       |    ×     |   √   |        | 自增  |
+| institute_name | varchar |  255  |    ×     |       |        |       |
+
+##### course_head（课头表）
+
+|      名      |  类型   | 长度  | 是否可空 | 主键  | 默认值 | 备注  |
+| :----------: | :-----: | :---: | :------: | :---: | :----: | :---: |
+|   head_id    | bigint  |       |    ×     |   √   |        | 自增  |
+|  head_name   | varchar |  255  |    ×     |       |        |       |
+|  teacher_id  | bigint  |       |    ×     |       |        | 外键  |
+| head_address | varchar |  255  |    ×     |       |        |       |
+|  course_id   | bigint  |       |    ×     |       |        | 外键  |
+|  head_year   |   int   |       |    ×     |       |        |       |
+|    volume    |   int   |       |    ×     |       |        |       |
+| volume_left  |   int   |       |    ×     |       |        |       |
+|  head_term   | tinyint |       |    ×     |       |        |       |
+
+##### course_user_rel（课程学生联系表）
+
+|     名     |  类型   | 长度  | 是否可空 | 主键  | 默认值 | 备注  |
+| :--------: | :-----: | :---: | :------: | :---: | :----: | :---: |
+|  head_id   | bigint  |       |    ×     |   √   |        | 自增  |
+| student_id | bigint  |       |    ×     |       |        | 外键  |
+|   grade    |  float  |       |    ×     |       |        |       |
+|   state    | tinyint |       |    ×     |       |   1    |       |
+
