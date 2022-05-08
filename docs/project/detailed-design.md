@@ -44,7 +44,7 @@
 ## 程序系统结构
 ### 架构描述
 系统总体上采用三层MVC架构，其中水平层次上自上而下分为前端界面view层、Controller控制层、Service业务逻辑兼model层，底层为用于数据库访问的Dao。垂直层次主要依据面向用户权限划分为四个切面:StudentController为代表的学生服务切面、TeacherController为代表的教师服务切面、AdminController为代表的管理员服务切面，CommonController为代表的公用服务切面。对应个个Controller于Service层划分了如下公用构件StudentService(用于学生特有业务处理构件)、CourseSelectService(单独将选课相关业务抽离出来有利于优化和非功能性需求的满足)、CourseService(用于课程特有业务处理构件，间接控制关系较为密切的CourseSelectService)、UserService(用于用户管理特有业务处理构件)、TeacherService(用于教师特有业务处理构件)，CommonService(用于公用业务业务处理构件)
-![classDiagram]()
+![classDiagram](./imgs/classDiagram.png)
 
 | class | 描述 |
 | ----- | ---- |
