@@ -77,8 +77,9 @@
 ## 开发环境
 
 - 操作系统：Windows 10
-- IDE&Editor：[VS Code](https://code.visualstudio.com/), [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+- IDE&Editor：[VS Code](https://code.visualstudio.com/), [IntelliJ IDEA](https://www.jetbrains.com/idea/)，[GoLand](https://www.jetbrains.com/go/)
 - JDK：JDK11
+- Golang: 1.18.3
 
 ## 测试环境
 
