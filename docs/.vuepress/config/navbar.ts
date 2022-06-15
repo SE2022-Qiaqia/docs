@@ -27,6 +27,10 @@ export const navbar: NavbarConfig = [
       {
         text: '详细设计',
         link: '/project/detailed-design'
+      },
+      {
+        text: '测试计划',
+        link: '/project/test-plan'
       }
     ]
   },
