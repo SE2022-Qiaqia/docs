@@ -117,13 +117,13 @@
 
 用户界面测试
 
-![image-20220615121632980](E:\Resources\Code\软工\docs\docs\project\imgs\image-20220615121632980.png)
+![image-20220615121632980](.\imgs\image-20220615121632980.png)
 
-![image-20220615120723793](E:\Resources\Code\软工\docs\docs\project\imgs\image-20220615120723793.png)
+![image-20220615120723793](.\imgs\image-20220615120723793.png)
 
 
 
-![image-20220615121456526](E:\Resources\Code\软工\docs\docs\project\imgs\image-20220615121456526.png)
+![image-20220615121456526](.\imgs\image-20220615121456526.png)
 
 
 | 检查项                                                 | 测试人员的类别及其评价          |
