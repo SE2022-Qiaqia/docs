@@ -31,6 +31,10 @@ export const navbar: NavbarConfig = [
       {
         text: '测试计划',
         link: '/project/test-plan'
+      },
+      {
+        text: 'API接口定义',
+        link: '/project/open-api'
       }
     ]
   },

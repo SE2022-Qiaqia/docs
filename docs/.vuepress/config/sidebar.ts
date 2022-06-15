@@ -19,6 +19,7 @@ export const sidebar: SidebarConfig = {
         '/project/design-analysis',
         '/project/detailed-design',
         '/project/test-plan',
+        '/project/open-api',
       ]
     },
     {
