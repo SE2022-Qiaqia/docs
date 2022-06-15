@@ -91,6 +91,13 @@
 
 ## 开发环境
 
+### 硬件环境
+
+- CPU: Intel Ice Lake(2.7GHz/3.3GHz)
+- RAM: 2GB
+
+### 软件环境
+
 - 操作系统：Windows 10
 - IDE&Editor：[VS Code](https://code.visualstudio.com/), [IntelliJ IDEA](https://www.jetbrains.com/idea/)，[GoLand](https://www.jetbrains.com/go/)
 - JDK：JDK11
